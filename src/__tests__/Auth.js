@@ -12,9 +12,10 @@ describe("Authentication", () => {
   });
 
   describe("Login Form", () => {
-    it("should display a Form", () => {
+    it("should display an Form with Email and Password Fields", () => {
       const wrapper = mount(<Login />);
       expect(wrapper.find("Email").exists()).toBe(true);
+      expect(wrapper.find("Password").exists()).toBe(true);
     });
   });
 });

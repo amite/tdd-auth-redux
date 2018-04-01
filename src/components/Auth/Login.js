@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Formik, Form } from "formik";
 import { Box, Button } from "rebass";
-
+import { Effect } from "formik-effect";
 import { Email, Password } from "../common/FormUtils";
 
 // ref - https://codesandbox.io/s/vn1r9wl797
@@ -10,7 +10,7 @@ export default class Login extends Component {
   static validate(values) {
     let errors = {};
     if (!values.email) {
-      errors.email = "Required";
+      errors.email = "Email is required";
     } else if (
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
     ) {
@@ -40,6 +40,15 @@ export default class Login extends Component {
           isSubmitting
         }) => (
           <Form>
+            <Effect
+              onChange={(currentFormikState, nextFormikState) => {
+                if (!nextFormikState.errors.email) {
+                  console.log("let's change to password");
+                } else {
+                  console.log("no errors");
+                }
+              }}
+            />
             <Box m={1}>
               <Email
                 label="Email"
