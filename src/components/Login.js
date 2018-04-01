@@ -44,10 +44,22 @@ export default class Login extends Component {
   render() {
     return (
       <Formik
-        onSubmit={() => {
-          console.log("submitting");
-        }}
         initialValues={{ email: "", password: "" }}
+        validate={values => {
+          // same as above, but feel free to move this into a class method now.
+          let errors = {};
+          if (!values.email) {
+            errors.email = "Required";
+          } else if (
+            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+          ) {
+            errors.email = "Invalid email address";
+          }
+          return errors;
+        }}
+        onSubmit={(values, { setSubmitting, setErrors }) => {
+          console.log("logging values", values);
+        }}
         render={({
           values,
           errors,
