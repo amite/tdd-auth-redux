@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import Auth from "../src/components/Auth";
+import Auth from "./components/Auth";
 import registerServiceWorker from "./registerServiceWorker";
 import { injectGlobal } from "styled-components";
 

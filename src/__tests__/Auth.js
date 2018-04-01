@@ -1,7 +1,7 @@
 import React from "react";
 import { mount, shallow, render } from "enzyme";
 import Auth from "../components/Auth";
-import Login from "../components/Login";
+import Login from "../components/Auth/Login";
 
 describe("Authentication", () => {
   describe("Login", () => {
