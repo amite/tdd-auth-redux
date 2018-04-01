@@ -7,10 +7,15 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-matchers": "^6.0.0",
     "enzyme-to-json": "^3.3.3",
+    "formik": "^0.11.11",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "react-scripts": "1.1.1",
-    "react-test-renderer": "^16.3.0"
+    "react-test-renderer": "^16.3.0",
+    "rebass": "^1.0.7",
+    "recompose": "^0.26.0",
+    "styled-components": "^3.2.5",
+    "styled-components-spacing": "^3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
